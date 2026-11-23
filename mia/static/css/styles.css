@@ -1,9 +1,9 @@
 :root {
-    --color-primary: #751299;      /* Royal Orchid: Barra superior, botones y encabezados de tabla */
-    --color-secondary: #5C0B54;    /* Deep Purple: Detalles y bordes secundarios */
-    --color-bg: #FAF5FF;           /* Fondo lila súper clarito para que no canse la vista */
-    --color-text: #330051;         /* Dark Amethyst: Color oscuro para las letras */
-    --color-accent: #DAA2FF;       /* Mauve: Acentos suaves */
+    --color-primary: #751299;
+    --color-secondary: #5C0B54;
+    --color-bg: #FAF5FF;
+    --color-text: #330051;
+    --color-accent: #DAA2FF;
     --color-white: #FFFFFF;
     --radius: 8px;
     --space: 1rem;
