@@ -1,9 +1,8 @@
 :root {
-    --color-primary: #751299;
-    --color-secondary: #5C0B54;
-    --color-bg: #FAF5FF;
-    --color-text: #330051;
-    --color-accent: #DAA2FF;
+    --color-primary: #751299;      /* Morado principal (barra, botones, tabla) */
+    --color-secondary: #5C0B54;    /* Morado oscuro (hover y detalles) */
+    --color-bg: #FAF5FF;           /* Fondo lavanda muy claro */
+    --color-text: #330051;         /* Morado muy oscuro para el texto */
     --color-white: #FFFFFF;
     --radius: 8px;
     --space: 1rem;
@@ -12,7 +11,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: 'Inter', sans-serif; /* Cambia por tu fuente de Google Fonts */
+    font-family: 'Inter', sans-serif;
     background-color: var(--color-bg);
     color: var(--color-text);
     line-height: 1.6;
@@ -33,28 +32,29 @@ body {
 /* Botones */
 .btn { display: inline-block; padding: 0.5rem 1rem; border-radius: var(--radius); text-decoration: none; border: none; cursor: pointer; font-weight: 600; }
 .btn-primary { background: var(--color-primary); color: var(--color-white); }
-.btn-danger { background: #DC2626; color: var(--color-white); }
-.btn-secondary { background: #64748B; color: var(--color-white); }
+.btn-primary:hover { background: var(--color-secondary); }
+.btn-danger { background: #d152f8; color: var(--color-white); }
+.btn-secondary { background: var(--color-secondary); color: var(--color-white); }
 
 /* Tarjetas y Formularios */
-.card { background: var(--color-white); padding: 2rem; border-radius: var(--radius); box-shadow: 0 2px 8px rgba(0,0,0,0.08); max-width: 500px; margin: 0 auto; }
+.card { background: var(--color-white); padding: 2rem; border-radius: var(--radius); box-shadow: 0 2px 8px rgba(51, 0, 81, 0.1); max-width: 500px; margin: 0 auto; }
 form p { margin-bottom: 1rem; }
 form label { display: block; font-weight: 600; margin-bottom: 0.3rem; }
-form input, form select, form textarea { width: 100%; padding: 0.6rem; border: 1px solid #CBD5E1; border-radius: var(--radius); }
+form input, form select, form textarea { width: 100%; padding: 0.6rem; border: 1px solid #D8B4FE; border-radius: var(--radius); }
 
 /* Tablas */
 table { width: 100%; border-collapse: collapse; background: var(--color-white); border-radius: var(--radius); overflow: hidden; margin-top: 1rem; }
-th, td { padding: 0.85rem; text-align: left; border-bottom: 1px solid #E2E8F0; }
+th, td { padding: 0.85rem; text-align: left; border-bottom: 1px solid #F3E8FF; }
 th { background: var(--color-primary); color: var(--color-white); }
 
 /* Mensajes de Django */
 .messages { list-style: none; margin-bottom: 1.5rem; }
 .message { padding: 1rem; border-radius: var(--radius); margin-bottom: 0.5rem; font-weight: 500; }
-.message.success { background: #DCFCE7; color: #166534; border: 1px solid #86EFAC; }
-.message.error { background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; }
+.message.success { background: #9b8bc5; color: #7e29ee; border: 1px solid #86EFAC; }
+.message.error { background: #e225b3; color: #b278d8; border: 1px solid #a52279; }
 
 /* Footer */
-.site-footer { text-align: center; padding: 1.5rem; background: #E2E8F0; margin-top: auto; }
+.site-footer { text-align: center; padding: 1.5rem; background: #3c1269; color: var(--color-text); margin-top: auto; }
 
 /* Responsive para móvil */
 @media (max-width: 768px) {
