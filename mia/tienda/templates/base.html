@@ -4,22 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Mi Proyecto{% endblock %}</title>
-    <!-- Pega aquí el link de Google Fonts -->
+    <title>{% block title %}Mi Tienda{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <header class="site-header">
         <nav>
-            <a href="{% url 'home' %}" class="logo">Nombre de tu App</a>
+            <a href="{% url 'inicio' %}" class="logo">Mi Tienda</a>
             <div>
                 {% if user.is_authenticated %}
-                    <!-- Pon aquí los enlaces de tus modelos reales -->
-                    <a href="#">Mis Registros</a>
+                    <a href="{% url 'dashboard' %}">Dashboard</a>
+                    <a href="{% url 'lista_productos' %}">Productos</a>
+                    <a href="{% url 'lista_categorias' %}">Categorías</a>
+                    <a href="{% url 'lista_clientes' %}">Clientes</a>
                     <span>Hola, {{ user.username }}</span>
-                    <a href="{% url 'logout' %}">Salir</a>
+                    <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Salir</button>
+                    </form>
                 {% else %}
-                    <a href="{% url 'login' %}">Entrar</a>
+                    <a href="{% url 'login' %}" class="btn btn-primary">Entrar</a>
                 {% endif %}
             </div>
         </nav>
@@ -33,11 +37,12 @@
                 {% endfor %}
             </ul>
         {% endif %}
+
         {% block content %}{% endblock %}
     </main>
 
     <footer class="site-footer">
-        <p>© {% now "Y" %} Tu Nombre - Proyecto Django</p>
+        <p>© {% now "Y" %} Mi Tienda - Proyecto Django</p>
     </footer>
 </body>
 </html>
